@@ -410,7 +410,7 @@ void StartTask03(void const* argument)
                     __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 000);
                 }
                 __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_4, 000);
-                if (machine.mode_alt_cnt > 3000 / 20)
+                if (machine.mode_alt_cnt > machine.mode_alt_ms / 20)
                 {
                     machine.mode_alt_flag = 1;
                     machine.mode_alt_cnt  = 0;
@@ -445,7 +445,7 @@ void StartTask03(void const* argument)
                 }
                 __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 000);
             }
-            if (machine.mode_alt_cnt > 3000 / 20)
+            if (machine.mode_alt_cnt > machine.mode_alt_ms / 20)
             {
                 machine.mode_alt_flag = 0;
                 machine.mode_alt_cnt  = 0;
